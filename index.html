@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RevoU Assigment</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <img src="./img/navlogo.png" alt="SMKN 6 Pandeglang" />
+          </div>
+
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./profile.html">Our Profile</a></li>
+            <li><a href="#">Achievment</a></li>
+            <li><a href="#">Message Us</a></li>
+          </ul>
+
+          <div class="menu-toggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- end of Header -->
+
+    <!-- Content -->
+    <main>
+      <!-- Hero -->
+      <div class="hero">
+        <div class="container">
+          <div class="welcome-text">
+            <h1 class="hero-title">
+              Hi <span id="nama-visitor">Name</span>, Welcome To Website
+            </h1>
+            <p class="hero-subtitle">Ini adalah website latihan pertama</p>
+          </div>
+
+          <div class="slider">
+            <img
+              class="img-banner"
+              src="./img/background-1.png"
+              alt="Gambar 1"
+            />
+            <img
+              class="img-banner"
+              src="./img/background-2.png"
+              alt="Gambar 2"
+            />
+            <img
+              class="img-banner"
+              src="./img/background-3.png"
+              alt="Gambar 3"
+            />
+          </div>
+
+          <div class="btn-navigation">
+            <button onclick="navSlider(-1)">Prev</button>
+            <button onclick="navSlider(1)">Next</button>
+          </div>
+        </div>
+      </div>
+      <!-- end of Hero -->
+
+      <!-- Facilitation -->
+      <div class="facilitation">
+        <div class="container">
+          <div class="facilitation-heading">
+            <h2 class="facilitation-title">Our Facilitation</h2>
+          </div>
+          <div class="facilitation-items">
+            <div class="facility">
+              <img src="./img/facility-1.png" alt="Facility 1" />
+              <h3 class="facility-desc">Professional Teacher</h3>
+            </div>
+            <div class="facility">
+              <img src="./img/facility-2.png" alt="Facility 2" />
+              <h3 class="facility-desc">Sport Field</h3>
+            </div>
+            <div class="facility">
+              <img src="./img/facility-3.png" alt="Facility 3" />
+              <h3 class="facility-desc">Classroom</h3>
+            </div>
+            <div class="facility">
+              <img src="./img/facility-4.png" alt="Facility 4" />
+              <h3 class="facility-desc">Laboratory</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of Facilitation -->
+
+      <!-- Message Us -->
+      <div class="message-us">
+        <div class="container">
+          <div class="message-us-heading">
+            <h2 class="message-us-title">Message Us</h2>
+          </div>
+
+          <div class="message-box">
+            <div class="input-message">
+              <form name="form-message-us" onsubmit="return handleSubmitForm()">
+                <table>
+                  <tr>
+                    <td class="col-label"><label for="nama">Nama</label></td>
+                    <td class="col-colon">:</td>
+                    <td class="col-input">
+                      <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        placeholder="Nama"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="tgl-lahir">Tanggal Lahir</label></td>
+                    <td>:</td>
+                    <td>
+                      <input type="date" id="tgl-lahir" name="tgl-lahir" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label>Jenis Kelamin</label></td>
+                    <td>:</td>
+                    <td>
+                      <input
+                        type="radio"
+                        id="laki-laki"
+                        name="jenis-kelamin"
+                        value="Laki-laki"
+                      />
+                      <label for="laki-laki" class="lbl-jenis-kelamin"
+                        >Laki-laki</label
+                      >
+                      <input
+                        type="radio"
+                        id="perempuan"
+                        name="jenis-kelamin"
+                        value="Perempuan"
+                      />
+                      <label for="perempuan" class="lbl-jenis-kelamin"
+                        >Perempuan</label
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="vertical-align: top">Pesan</td>
+                    <td style="vertical-align: top">:</td>
+                    <td>
+                      <textarea name="pesan" placeholder="Pesan"></textarea>
+                    </td>
+                  </tr>
+                </table>
+
+                <input type="submit" value="Submit" class="btn-submit" />
+              </form>
+            </div>
+
+            <div class="submitted-message">
+              <p><b>Current Time: </b><span id="submit-current-time"></span></p>
+              <br /><br />
+              <p><b>Nama: </b><span id="submit-nama"></span></p>
+              <p><b>Tanggal Lahir: </b><span id="submit-tgl-lahir"></span></p>
+              <p>
+                <b>Jenis Kelamin: </b><span id="submit-jenis-kelamin"></span>
+              </p>
+              <p><b>Pesan: </b><span id="submit-pesan"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- end of Message Us -->
+
+      <!-- Footer -->
+      <footer>
+        <div class="footer">
+          <div class="container">
+            <p class="footer-title">Created By Muhamad Jaya</p>
+          </div>
+        </div>
+      </footer>
+      <!-- end of Footer -->
+    </main>
+    <!-- end of Content -->
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

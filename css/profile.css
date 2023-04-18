@@ -1,0 +1,505 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ------------------------ My CSS Style ------------------------ */
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+
+nav {
+  display: flex;
+  background-color: rgb(41 74 112);
+  justify-content: space-between;
+  color: rgb(255, 255, 255);
+  height: 70px;
+  align-items: center;
+  padding: 0 30px;
+}
+
+nav .logo {
+  width: 65px;
+}
+
+nav .logo:hover {
+  cursor: pointer;
+}
+
+nav .logo img {
+  width: 100%;
+}
+
+/* Hamburger Menu */
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 999;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 28px;
+  height: 25px;
+  left: -4px;
+  top: -6px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+nav ul {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  background-color: rgba(2, 17, 34, 0.884);
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 1;
+  transform: translateY(-100%);
+  transition: all 1s;
+}
+
+nav ul li a {
+  color: rgb(236, 229, 241);
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: rgb(255 171 31);
+}
+
+nav ul.slide {
+  transform: translateY(0);
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+}
+
+.hero-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  margin-bottom: 30px;
+}
+
+.slider {
+  border-top: 7px solid rgb(255 171 31);
+  border-bottom: 7px solid rgb(41 74 112);
+}
+
+.slider img {
+  height: 200px;
+  width: 100%;
+}
+
+.btn-navigation {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-navigation button {
+  background-color: rgb(41 74 112);
+  padding: 5px 25px;
+  border-radius: 15px;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.btn-navigation button:hover {
+  background-color: rgb(255 171 31);
+}
+
+.btn-navigation button:nth-child(1) {
+  margin-right: 10px;
+}
+
+/* About our school */
+.our-school {
+  background-color: rgba(59, 108, 163, 0.938);
+  padding: 50px 30px;
+  color: white;
+}
+
+.our-school-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.our-school-content {
+  text-align: justify;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Vision & Mission */
+.vision-and-mission {
+  padding: 50px 30px;
+}
+
+.vision-and-mission-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.vision-and-mission-content {
+  text-align: justify;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.vision-heading,
+.mission-heading {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.mission-heading {
+  margin-top: 15px;
+}
+
+/* Footer */
+footer {
+  background-color: rgb(41 74 112);
+  padding: 20px 30px;
+  font-size: 13px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.footer-title {
+  text-align: right;
+}
+
+/* Responsive Breakpoints */
+
+/* Ukuran Tablet */
+@media screen and (min-width: 768px) {
+  /* Navbar */
+  nav ul {
+    position: static;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-between;
+    transform: none;
+    height: unset;
+    z-index: unset;
+    transition: unset;
+    background-color: unset;
+  }
+
+  nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+
+  /* Hamburger Menu */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Slider */
+  .hero-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 20px;
+  }
+
+  .slider img {
+    height: 350px;
+  }
+
+  /* About our school */
+
+  .our-school-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .our-school-content {
+    font-size: 16px;
+    letter-spacing: 1px;
+    word-spacing: 1.5px;
+  }
+
+  /* Vision & Mission */
+  .vision-and-mission-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .vision-and-mission-content {
+    font-size: 16px;
+    letter-spacing: 1px;
+    word-spacing: 1.5px;
+  }
+
+  .vision-heading,
+  .mission-heading {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .mission-heading {
+    margin-top: 15px;
+  }
+}
+
+/* Ukuran Desktop */
+
+@media screen and (min-width: 1024px) {
+  /* Navbar */
+  nav ul {
+    width: 40%;
+  }
+
+  nav ul li a {
+    font-size: 1em;
+  }
+
+  /* Slider */
+  .hero-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .slider img {
+    height: 425px;
+  }
+
+  /* About our school */
+
+  .our-school-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .our-school-content {
+    font-size: 18px;
+    letter-spacing: 1px;
+    word-spacing: 1.5px;
+  }
+
+  /* Vision & Mission */
+  .vision-and-mission-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .vision-and-mission-content {
+    font-size: 18px;
+    letter-spacing: 1px;
+    word-spacing: 1.5px;
+  }
+
+  .vision-heading,
+  .mission-heading {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .mission-heading {
+    margin-top: 55px;
+  }
+}
